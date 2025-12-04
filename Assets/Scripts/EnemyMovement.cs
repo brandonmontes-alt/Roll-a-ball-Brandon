@@ -20,5 +20,14 @@ public class EnemyMovement : MonoBehaviour
     }
     }
 
+void OnTriggerEnter(Collider other)
+    {
+        // Collect pickups
+        if (other.gameObject.CompareTag("EnemyPickup"))
+        {
+            other.gameObject.SetActive(false);
+            transform.position = new Vector3(0, 0.5f, 0);
+        }
+    }
     
 }

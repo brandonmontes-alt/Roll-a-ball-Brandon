@@ -134,7 +134,7 @@ public class PlayerController : MonoBehaviour
         }
         
         // Win condition
-        if (count >= 16)
+        if (count >= 81)
         {
             if (winTextObject != null)
             {
