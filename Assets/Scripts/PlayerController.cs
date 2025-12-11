@@ -171,13 +171,7 @@ public class PlayerController : MonoBehaviour
         // Check for enemy - lose condition
         if (collision.gameObject.CompareTag("Enemy"))
         {
-            Destroy(gameObject);
-            
-            if (winTextObject != null)
-            {
-                winTextObject.SetActive(true);
-                winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose!";
-            }
+            Death();
         }
     }
     
@@ -188,5 +182,11 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    public void Death(){
+        Destroy(gameObject);
+        winTextObject.gameObject.SetActive(true);
+        winTextObject.GetComponent<TextMeshProUGUI>().text = "You Lose";
     }
 }
